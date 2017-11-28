@@ -1,24 +1,79 @@
 <template>
-  <div id="app">
+  <div id="app" :class="rootClass">
     <header class='luntan-header'>
        <div class=''></div>
     </header>
     <div class="luntan">
+        <group>
+          <selector title="title" @on-change="changeTheme" :options="options" v-model="theme"></selector>
+        </group>
+        <group>
+          <calendar :readonly="readonly" v-model="demo1" :title="'Basic Usage'" disable-past placeholder="placeholder" @on-show="log('show')" @on-hide="log('hide')"></calendar>
+        </group>
+        <button-tab>
+          <button-tab-item>Today</button-tab-item>
+          <button-tab-item selected>This Week</button-tab-item>
+          <button-tab-item>This Month</button-tab-item>
+        </button-tab>
         <router-view/>
     </div>
   </div>
 </template>
 <script>
-import { Icon } from 'vux'
+import { Icon, Selector, Group, Calendar, ButtonTab, ButtonTabItem } from 'vux'
 export default {
   name: 'app',
+  data () {
+    return {
+      theme: null,
+      options: [
+        {
+          key: 0,
+          value: 'default'
+        },
+        {
+          key: 1,
+          value: 'green'
+        },
+        {
+          key: 2,
+          value: 'red'
+        }
+      ],
+      rootClass: 'app-default',
+      // Calendar 参数设置
+      readonly: false,
+      demo1: ''
+    }
+  },
   components: {
-    Icon
+    Icon,
+    Selector,
+    Group,
+    Calendar,
+    ButtonTab,
+    ButtonTabItem
+  },
+  methods: {
+    changeTheme (data) {
+      console.log('*****data', data)
+      this.options.forEach(item => {
+        if (item.key === data) {
+          this.rootClass = `app-${item.value}`
+        }
+      })
+    },
+    log (str) {
+      console.log(str)
+    },
+    onChange (val) {
+      console.log('on change', val)
+    }
   }
 }
 </script>
 <style lang='less'>
-@import url('./assets/css/pink.less');
+@import './assets/less/skin.less';
 
 /* 公共 */
 .luntan-header {

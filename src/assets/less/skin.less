@@ -1,0 +1,79 @@
+.theme(@color: #FF9900) {
+  .box {
+    background: #fff;
+  }
+  .box-border {
+    border: 1px solid @color;
+  }
+  .box-back {
+    background-color: @color;
+  }
+  .font-theme {
+    color: @color;
+  }
+  @import "~vux/src/styles/weui/base/reset";
+
+  // icon font
+  @import "~vux/src/styles/weui/icon/weui_icon_font";
+
+
+  // button
+  @import "~vux/src/styles/weui/widget/weui-button/weui-button";
+
+  // cell
+  @import "~vux/src/styles/weui/widget/weui_cell/weui_cell_global";
+
+  @import "~vux/src/styles/weui/widget/weui_cell/weui_access";
+  @import "~vux/src/styles/weui/widget/weui_cell/weui_check";
+  @import "~vux/src/styles/weui/widget/weui_cell/weui_form";
+  @import "~vux/src/styles/weui/widget/weui_cell/weui_switch";
+  @import "~vux/src/styles/weui/widget/weui-uploader/index";
+
+  // msg
+  @import "~vux/src/styles/weui/widget/weui_page/weui_msg";
+
+  // article
+  @import "~vux/src/styles/weui/widget/weui_page/weui_article";
+
+  // tab
+  @import "~vux/src/styles/weui/widget/weui_tab/weui_tab";
+
+  // progress
+  @import "~vux/src/styles/weui/widget/weui_progress/weui_progress";
+
+  // card
+  @import "~vux/src/styles/weui/widget/weui_panel/weui_panel";
+
+  // media box
+  @import "~vux/src/styles/weui/widget/weui_media_box/weui_media_box";
+
+  // grid
+  @import "~vux/src/styles/weui/widget/weui-grid/weui-grid";
+
+  // tips
+  @import "~vux/src/styles/weui/widget/weui_tips/weui_dialog";
+  @import "~vux/src/styles/weui/widget/weui_tips/weui_toast";
+  @import "~vux/src/styles/weui/widget/weui_tips/weui_mask";
+
+  //action sheet
+  @import "~vux/src/styles/weui/widget/weui_tips/weui_actionsheet";
+
+  //searchbar
+  @import "~vux/src/styles/weui/widget/weui_searchbar/weui_searchbar";
+}
+
+
+.app-default {
+  @import './vux-theme.less';
+  // @import '~vux/src/styles/weui/weui.less';
+  // @import '~vux/src/styles/index.less';
+  .theme();
+}
+
+.app-green {
+  .theme(green);
+}
+
+.app-red {
+  .theme(red);
+}
