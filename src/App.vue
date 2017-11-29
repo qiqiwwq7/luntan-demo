@@ -33,7 +33,7 @@ export default {
         },
         {
           key: 1,
-          value: 'green'
+          value: 'primary'
         },
         {
           key: 2,
@@ -73,16 +73,6 @@ export default {
 }
 </script>
 <style lang='less'>
-@import './assets/less/skin.less';
-
-/* 公共 */
-.luntan-header {
-  background: #1A2946;
-}
-.luntan {
-  width: 100%;
-  height: 100%;
-}
 /*横屏  */
 @media all and (orientation: landscape) {
   .luntan-header {
