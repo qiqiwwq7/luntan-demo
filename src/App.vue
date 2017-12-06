@@ -1,10 +1,13 @@
 <template>
   <div id="app" :class="rootClass">
     <header class='luntan-header'>
-       <div class=''></div>
+        <div class='shouye'>首页</div>
+        <div class='luntan'>论坛</div>
+        <div class='luntan'>论坛</div>
+        <div class='luntan'>论坛</div>
     </header>
     <div class="luntan">
-        <group>
+        <!-- <group>
           <selector title="title" @on-change="changeTheme" :options="options" v-model="theme"></selector>
         </group>
         <group>
@@ -14,7 +17,7 @@
           <button-tab-item>Today</button-tab-item>
           <button-tab-item selected>This Week</button-tab-item>
           <button-tab-item>This Month</button-tab-item>
-        </button-tab>
+        </button-tab> -->
         <router-view/>
     </div>
   </div>
@@ -56,7 +59,7 @@ export default {
   },
   methods: {
     changeTheme (data) {
-      console.log('*****data', data)
+      // console.log('*****data', data)
       this.options.forEach(item => {
         if (item.key === data) {
           this.rootClass = `app-${item.value}`
@@ -73,22 +76,68 @@ export default {
 }
 </script>
 <style lang='less'>
+  // .luntan-header {
+  //   width: 100%;
+  //   height:60px;
+  //   position: fixed;
+  //   left: 0;
+  //   bottom:0;
+  //   display: flex;
+  //   div {
+  //     width: 100%;
+  //     height: 100%;
+  //     flex-direction: column;
+  //   }
+  // }
 /*横屏  */
 @media all and (orientation: landscape) {
+  // .luntan-header {
+  //   width: 60px;
+  //   height:100%;
+  //   float: left;
+  // }
   .luntan-header {
-    width: 60px;
+    width: 60PX;
     height:100%;
-    float: left;
+    position: fixed;
+    left: 0;
+    bottom:0;
+    display: flex;
+    flex-direction:column-reverse;
+    div {
+      width: 100%;
+      height: 100%;
+      // flex-direction:row-reverse;
+      display: flex;
+  align-items: center;
+    }
   }
 }
 /*竖屏  */
 @media all and (orientation: portrait) {
-  .luntan-header {
+  // .luntan-header {
+  //   width: 100%;
+  //   height:60px;
+  //   position: fixed;
+  //   left: 0;
+  //   bottom:0;
+  // }
+    .luntan-header {
     width: 100%;
     height:60px;
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom:0;
+    display: flex;
+    align-items: center;
+    div {
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      line-height: 60px;
+    }
   }
 }
 </style>

@@ -13,14 +13,14 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-       // kk
+      // kk
     }
   },
   components: {
-    // kk
+     // kk
   },
   methods: {
-  // kk
+     // kk
   }
 }
 </script>
@@ -46,10 +46,10 @@ export default {
 }
 /*横屏  */
 @media all and (orientation: landscape) {
-
+ // kk
 }
 /*竖屏  */
 @media all and (orientation: portrait) {
-
+ // kk
 }
 </style>
